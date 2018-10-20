@@ -17,4 +17,7 @@
     <!-- Primary dark color for the editor -->
     <color name="editorColorPrimaryDark">#000000</color>
 
+    <!-- Primary light color for the editor -->
+    <color name="editorColorPrimaryLight">#969696</color>
+
 </resources>

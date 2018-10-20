@@ -24,7 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/small">
+            android:paddingLeft="@dimen/small"
+            android:paddingStart="@dimen/small">
 
             <!-- Name field -->
             <EditText
@@ -61,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/medium"
                     android:backgroundTint="@color/colorPrimary"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@string/default_font_medium"
                     android:hint="-"
                     android:onClick="decrement"
                     android:textColor="@color/editorColorPrimaryDark"
@@ -74,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/medium"
                     android:backgroundTint="@color/colorPrimary"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@string/default_font_medium"
                     android:hint="+"
                     android:onClick="increment"
                     android:textColor="@color/editorColorPrimaryDark"
@@ -103,7 +104,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/small">
+            android:paddingLeft="@dimen/small"
+            android:paddingStart="@dimen/small">
 
             <!-- Supplier name field -->
             <EditText
@@ -117,7 +119,18 @@
                 android:id="@+id/edit_supplier_phone"
                 style="@style/EditorFieldStyle"
                 android:hint="@string/hint_supplier_phone"
-                android:inputType="number" />
+                android:inputType="phone" />
+
+            <!-- Supplier phone format text -->
+            <TextView
+                android:id="@+id/phone_format_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@string/default_font"
+                android:text="i.e. 123-456-7890"
+                android:textColor="@color/editorColorPrimaryLight"
+                />
 
             <!--Call supplier button-->
             <Button
@@ -126,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/large"
                 android:backgroundTint="@color/colorAlternate"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@string/default_font_medium"
                 android:hint="@string/hint_call_supplier_text"
                 android:textColor="@color/editorColorPrimaryDark" />
 

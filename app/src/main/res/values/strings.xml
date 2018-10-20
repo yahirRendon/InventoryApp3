@@ -136,4 +136,7 @@
     <!--Font family medium value [CHAR LIMIT=20] -->
     <string name="default_font_medium">sans-serif-medium</string>
 
+    <!--Toast for valid phone format input [CHAR LIMIT=20] -->
+    <string name="toast_phone_format_invalid">Please format phone as:\n123-456-7891</string>
+
 </resources>

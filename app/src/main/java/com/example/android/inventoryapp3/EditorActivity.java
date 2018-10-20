@@ -32,9 +32,6 @@ import com.example.android.inventoryapp3.data.InventoryContract.InventoryEntry;
 public class EditorActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
-    /** The min numbers required in supplier phone to validate */
-    final private static int PHONE_NUM_MIN = 7;
-
     /**
      * Stores product quantity values
      */
@@ -118,12 +115,13 @@ public class EditorActivity extends AppCompatActivity implements
             @Override
             public void onClick(View v) {
                 // Send call intent if number is valid
-                String SupplierPhoneString = mSupplierNameEditText.getText().toString().trim();
-                if (SupplierPhoneString == null || TextUtils.isEmpty(SupplierPhoneString) || SupplierPhoneString.length() < PHONE_NUM_MIN) {
+
+                String supplierPhoneString = mSupplierPhoneEditText.getText().toString().trim();
+                if (supplierPhoneString == null || TextUtils.isEmpty(supplierPhoneString)) {
                     Toast.makeText(getApplicationContext(), R.string.toast_invalid_number_text, Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(Intent.ACTION_DIAL);
-                    String uri = "tel:" + SupplierPhoneString;
+                    String uri = "tel:" + supplierPhoneString;
                     intent.setData(Uri.parse(uri));
                     startActivity(intent);
                 }
@@ -181,6 +179,29 @@ public class EditorActivity extends AppCompatActivity implements
                 || TextUtils.isEmpty(supplierPhoneString)) {
             Toast.makeText(this, R.string.no_empty_values, Toast.LENGTH_SHORT).show();
             return;
+        }
+
+        // Validate phone format prior to saving
+        // Split phone by hyphen
+        String[] phoneParse = supplierPhoneString.split("-");
+        // Check that phone contains area code, prefix, and line number sections
+        // split by 2 hyphens
+        if(phoneParse.length != 3) {
+            // Inform user of appropriate phone format
+            Toast.makeText(getApplicationContext(), R.string.toast_phone_format_invalid, Toast.LENGTH_SHORT).show();
+            return;
+        } else {
+            // assign the lengths of area code, prefix, and line numbers
+            int areaCode = Integer.valueOf(phoneParse[0].length());
+            int prefix = Integer.valueOf(phoneParse[1].length());
+            int linNum = Integer.valueOf(phoneParse[2].length());
+
+            // Check that area code, prefix, and line number have appropriate length
+            if (areaCode != 3 || prefix != 3 || linNum != 4) {
+                //Inform user of appropriate phone format
+                Toast.makeText(getApplicationContext(), R.string.toast_phone_format_invalid, Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
 
         // Check if this is supposed to be a new product
