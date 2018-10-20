@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--When save product action taken-->
+
+    <!--Menu icon-->
+    <item
+        android:id="@+id/menu_icon"
+        android:icon="@drawable/menu_icon"
+        android:orderInCategory="11111"
+        android:title="menuIcon"
+        app:showAsAction="always">
+
+        <menu>
+
+            <!--Save product-->
+            <item
+                android:id="@+id/save"
+                android:icon="@drawable/ic_done_gray"
+                android:title="@string/action_save"
+                app:showAsAction="ifRoom" />
+
+            <!--Delete item-->
+            <item
+                android:id="@+id/deleteAnItem"
+                android:icon="@drawable/delete_icon"
+                android:title="@string/delete"
+                app:showAsAction="never" />
+
+        </menu>
+
+    </item>
+
+</menu>
