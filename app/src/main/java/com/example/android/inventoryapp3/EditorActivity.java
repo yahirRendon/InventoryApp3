@@ -142,8 +142,6 @@ public class EditorActivity extends AppCompatActivity implements
         mSupplierNameEditText = (EditText) findViewById(R.id.edit_supplier_name);
         mSupplierPhoneEditText = (EditText) findViewById(R.id.edit_supplier_phone);
         callSupplier = (Button) findViewById(R.id.call_button);
-//        Button increaseButton = (Button) findViewById(R.id.increment_button);
-//        Button decreaseButton = (Button) findViewById(R.id.decrement_button);
 
         // Setup OnTouchListeners on all the input fields, so we can determine if the user
         // has touched or modified them. This will let us know if there are unsaved changes
@@ -153,8 +151,6 @@ public class EditorActivity extends AppCompatActivity implements
         mQuantityEditText.setOnTouchListener(mTouchListener);
         mSupplierNameEditText.setOnTouchListener(mTouchListener);
         mSupplierPhoneEditText.setOnTouchListener(mTouchListener);
-//        increaseButton.setOnTouchListener(mTouchListener);
-//        decreaseButton.setOnTouchListener(mTouchListener);
     }
 
     /**
