@@ -126,7 +126,7 @@ public class InventoryCursorAdapter extends CursorAdapter {
 
                 // check if quantity is == 0 or > 0
                 if (quantity == 0) {
-                    //FIX on update
+                    // Inform user quantity can't be below zero
                      Toast.makeText(context, R.string.toast_zero_greater, Toast.LENGTH_SHORT).show();
                 } else if (quantity > 0) {
                     quantity--;

@@ -130,4 +130,10 @@
     <!--Toast for no empty fields [CHAR LIMIT=20] -->
     <string name="no_empty_values">Enter value for all fields</string>
 
+    <!--Font family default value [CHAR LIMIT=20] -->
+    <string name="default_font">sans-serif-light</string>
+
+    <!--Font family medium value [CHAR LIMIT=20] -->
+    <string name="default_font_medium">sans-serif-medium</string>
+
 </resources>
